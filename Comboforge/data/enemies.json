@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Moss Crawler",
+    "hp": 18,
+    "damage": 3,
+    "resistances": {
+      "chaos": 0.15
+    }
+  },
+  {
+    "name": "Ash Raider",
+    "hp": 20,
+    "damage": 4,
+    "resistances": {
+      "fire": 0.2
+    }
+  },
+  {
+    "name": "Storm Wisp",
+    "hp": 18,
+    "damage": 4,
+    "resistances": {
+      "lightning": 0.2
+    }
+  },
+  {
+    "name": "Frost Brute",
+    "hp": 24,
+    "damage": 5,
+    "resistances": {
+      "cold": 0.2
+    }
+  },
+  {
+    "name": "Hollow Knight",
+    "hp": 26,
+    "damage": 5,
+    "resistances": {
+      "physical": 0.25
+    }
+  },
+  {
+    "name": "Void Herald",
+    "hp": 28,
+    "damage": 6,
+    "resistances": {
+      "chaos": 0.2
+    }
+  }
+]

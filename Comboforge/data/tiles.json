@@ -1,0 +1,340 @@
+[
+  {
+    "id": "ember_spire",
+    "name": "Ember Spire",
+    "symbol": "F",
+    "color": "#d87251",
+    "cost": 3,
+    "weight": 5,
+    "description": "Fire hit every turn. Applies ignite damage over time.",
+    "effects": [
+      {
+        "trigger": "on_turn",
+        "type": "damage",
+        "amount": 7,
+        "element": "fire",
+        "status": "ignite",
+        "potency": 3,
+        "duration": 2
+      }
+    ]
+  },
+  {
+    "id": "arc_coil",
+    "name": "Arc Coil",
+    "symbol": "L",
+    "color": "#e6c15b",
+    "cost": 3,
+    "weight": 5,
+    "description": "Lightning damage. Combine with Chain Prism and Crit Lens.",
+    "effects": [
+      {
+        "trigger": "on_turn",
+        "type": "damage",
+        "amount": 6,
+        "element": "lightning"
+      }
+    ]
+  },
+  {
+    "id": "frost_pylon",
+    "name": "Frost Pylon",
+    "symbol": "I",
+    "color": "#7bc4dd",
+    "cost": 3,
+    "weight": 5,
+    "description": "Cold damage and chill; chilled enemies attack for 30% less.",
+    "effects": [
+      {
+        "trigger": "on_turn",
+        "type": "damage",
+        "amount": 5,
+        "element": "cold",
+        "status": "chill",
+        "duration": 2,
+        "potency": 0
+      }
+    ]
+  },
+  {
+    "id": "toxic_grove",
+    "name": "Toxic Grove",
+    "symbol": "P",
+    "color": "#8fc870",
+    "cost": 3,
+    "weight": 5,
+    "description": "Chaos hit, stacking poison each turn.",
+    "effects": [
+      {
+        "trigger": "on_turn",
+        "type": "damage",
+        "amount": 4,
+        "element": "chaos",
+        "status": "poison",
+        "duration": 3,
+        "potency": 3
+      }
+    ]
+  },
+  {
+    "id": "iron_guard",
+    "name": "Iron Guard",
+    "symbol": "S",
+    "color": "#94a3b8",
+    "cost": 2,
+    "weight": 4,
+    "description": "Generate 5 shield each turn, absorbing enemy attacks.",
+    "effects": [
+      {
+        "trigger": "on_turn",
+        "type": "shield",
+        "amount": 5
+      }
+    ]
+  },
+  {
+    "id": "life_well",
+    "name": "Life Well",
+    "symbol": "H",
+    "color": "#f090aa",
+    "cost": 3,
+    "weight": 3,
+    "description": "Restore 3 life every turn.",
+    "effects": [
+      {
+        "trigger": "on_turn",
+        "type": "heal",
+        "amount": 3
+      }
+    ]
+  },
+  {
+    "id": "essence_spring",
+    "name": "Essence Spring",
+    "symbol": "E",
+    "color": "#b2a2ec",
+    "cost": 2,
+    "weight": 4,
+    "description": "Generate 2 extra essence every turn.",
+    "effects": [
+      {
+        "trigger": "on_turn",
+        "type": "essence",
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "id": "amplifier",
+    "name": "Amplifier",
+    "symbol": "+",
+    "color": "#edac6e",
+    "cost": 3,
+    "weight": 4,
+    "description": "Support: adjacent attack tiles deal 30% more damage.",
+    "effects": [],
+    "bonuses": [
+      {
+        "type": "damage_more",
+        "amount": 0.3
+      }
+    ]
+  },
+  {
+    "id": "forged_edge",
+    "name": "Forged Edge",
+    "symbol": "2",
+    "color": "#e8a180",
+    "cost": 2,
+    "weight": 4,
+    "description": "Support: adjacent attacks gain +3 base damage.",
+    "effects": [],
+    "bonuses": [
+      {
+        "type": "damage_flat",
+        "amount": 3
+      }
+    ]
+  },
+  {
+    "id": "crit_lens",
+    "name": "Crit Lens",
+    "symbol": "C",
+    "color": "#f6dc88",
+    "cost": 3,
+    "weight": 3,
+    "description": "Support: adjacent attacks gain +25% crit chance.",
+    "effects": [],
+    "bonuses": [
+      {
+        "type": "crit_chance",
+        "amount": 0.25
+      }
+    ]
+  },
+  {
+    "id": "chain_prism",
+    "name": "Chain Prism",
+    "symbol": ">",
+    "color": "#8ad9ef",
+    "cost": 3,
+    "weight": 3,
+    "description": "Support: adjacent attacks strike again for half damage.",
+    "effects": [],
+    "bonuses": [
+      {
+        "type": "chain",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": "echo_chamber",
+    "name": "Echo Chamber",
+    "symbol": "R",
+    "color": "#c0a5ec",
+    "cost": 4,
+    "weight": 2,
+    "description": "Support: adjacent attacks echo at half strength, up to twice.",
+    "effects": [],
+    "bonuses": [
+      {
+        "type": "echo",
+        "amount": 1
+      }
+    ]
+  },
+  {
+    "id": "leech_root",
+    "name": "Leech Root",
+    "symbol": "V",
+    "color": "#b86e92",
+    "cost": 3,
+    "weight": 3,
+    "description": "Support: adjacent attacks heal for 20% of damage dealt.",
+    "effects": [],
+    "bonuses": [
+      {
+        "type": "leech",
+        "amount": 0.2
+      }
+    ]
+  },
+  {
+    "id": "spark_relay",
+    "name": "Spark Relay",
+    "symbol": "T",
+    "color": "#f3d46e",
+    "cost": 4,
+    "weight": 2,
+    "description": "Once per turn: when an adjacent tile hits, deal 4 lightning damage.",
+    "effects": [
+      {
+        "trigger": "on_hit",
+        "condition": "adjacent_source",
+        "type": "damage",
+        "amount": 4,
+        "element": "lightning"
+      }
+    ]
+  },
+  {
+    "id": "storm_bell",
+    "name": "Storm Bell",
+    "symbol": "B",
+    "color": "#b8e4f0",
+    "cost": 4,
+    "weight": 2,
+    "description": "Once per turn: any critical strike triggers 7 lightning damage.",
+    "effects": [
+      {
+        "trigger": "on_crit",
+        "type": "damage",
+        "amount": 7,
+        "element": "lightning"
+      }
+    ]
+  },
+  {
+    "id": "soul_siphon",
+    "name": "Soul Siphon",
+    "symbol": "K",
+    "color": "#d39cda",
+    "cost": 3,
+    "weight": 3,
+    "description": "On kill: generate 3 essence (once per turn).",
+    "effects": [
+      {
+        "trigger": "on_kill",
+        "type": "essence",
+        "amount": 3
+      }
+    ]
+  },
+  {
+    "id": "golden_idol",
+    "name": "Golden Idol",
+    "symbol": "G",
+    "color": "#ffd078",
+    "cost": 3,
+    "weight": 2,
+    "description": "On kill: gain 2 gold (once per turn).",
+    "effects": [
+      {
+        "trigger": "on_kill",
+        "type": "gold",
+        "amount": 2
+      }
+    ]
+  },
+  {
+    "id": "ward_altar",
+    "name": "Ward Altar",
+    "symbol": "W",
+    "color": "#a6bed5",
+    "cost": 4,
+    "weight": 2,
+    "description": "Generate 9 shield every turn.",
+    "effects": [
+      {
+        "trigger": "on_turn",
+        "type": "shield",
+        "amount": 9
+      }
+    ]
+  },
+  {
+    "id": "venom_totem",
+    "name": "Venom Totem",
+    "symbol": "N",
+    "color": "#9bc774",
+    "cost": 4,
+    "weight": 3,
+    "description": "Apply 4 poison damage per tick for 3 turns without a hit.",
+    "effects": [
+      {
+        "trigger": "on_turn",
+        "type": "apply_status",
+        "status": "poison",
+        "duration": 3,
+        "potency": 4
+      }
+    ]
+  },
+  {
+    "id": "blood_rune",
+    "name": "Blood Rune",
+    "symbol": "X",
+    "color": "#d77e83",
+    "cost": 4,
+    "weight": 2,
+    "description": "On kill: heal 6 HP (once per turn).",
+    "effects": [
+      {
+        "trigger": "on_kill",
+        "type": "heal",
+        "amount": 6
+      }
+    ]
+  }
+]
