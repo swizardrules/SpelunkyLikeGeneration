@@ -1,0 +1,38 @@
+name: Comboforge Windows build
+
+on:
+  push:
+    branches:
+      - prototype/comboforge-v0
+    paths:
+      - "Comboforge/**"
+      - ".github/workflows/comboforge-windows.yml"
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Test and export Godot 4.4.1
+    runs-on: ubuntu-latest
+    container:
+      image: barichello/godot-ci:4.4.1
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Import project
+        run: godot --headless --path Comboforge --import
+
+      - name: Run deterministic core tests
+        run: godot --headless --path Comboforge --script res://scripts/tests/test_core.gd
+
+      - name: Export Windows x64 executable
+        run: |
+          mkdir -p Comboforge/build
+          godot --headless --path Comboforge --export-release "Windows Desktop" build/Comboforge.exe
+
+      - name: Upload Windows build
+        uses: actions/upload-artifact@v4
+        with:
+          name: Comboforge-Windows-x64
+          path: Comboforge/build/
+          if-no-files-found: error
